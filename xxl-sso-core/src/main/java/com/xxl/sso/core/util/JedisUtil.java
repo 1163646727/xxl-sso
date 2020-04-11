@@ -81,7 +81,9 @@ public class JedisUtil {
 
                             String[] addressArr = address.split(",");
                             for (int i = 0; i < addressArr.length; i++) {
+                                // 添加Redis访问地址 ChenQi
                                 JedisShardInfo jedisShardInfo = new JedisShardInfo(addressArr[i]);
+                                // 添加Redis登录密码 ChenQi
                                 jedisShardInfos.add(jedisShardInfo);
                             }
                             shardedJedisPool = new ShardedJedisPool(config, jedisShardInfos);
